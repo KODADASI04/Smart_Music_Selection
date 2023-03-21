@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "23529581496",
+    "project_id": "akilli-muzik-secimi",
+    "storage_bucket": "akilli-muzik-secimi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23529581496:android:5a0d1099c33a9962493d4d",
+        "android_client_info": {
+          "package_name": "com.example.akillimuziksecimi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23529581496-v9v0t3956r7p203boholdus0tfm30n4o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.akillimuziksecimi",
+            "certificate_hash": "979e9fa8d2a215f0b7e4f4e522813865cd91397b"
+          }
+        },
+        {
+          "client_id": "23529581496-ib4tmr184q57e53f6ccscsqnkeh45d7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqLMlrCaDqXC-dccqN9D75NZP5t-R1Sro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23529581496-0thr8p6n8e043jk6vckfcpgigkldool3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "23529581496-4kbhtp1ln6mcskid9maormub2mf65rkf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartMusicSelection"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23529581496:android:dc6533934ea8c955493d4d",
+        "android_client_info": {
+          "package_name": "com.example.smart_music_selection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23529581496-mhq6s4sjhcalhant21hkkbv3b315vtgn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smart_music_selection",
+            "certificate_hash": "979e9fa8d2a215f0b7e4f4e522813865cd91397b"
+          }
+        },
+        {
+          "client_id": "23529581496-ib4tmr184q57e53f6ccscsqnkeh45d7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqLMlrCaDqXC-dccqN9D75NZP5t-R1Sro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23529581496-0thr8p6n8e043jk6vckfcpgigkldool3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "23529581496-4kbhtp1ln6mcskid9maormub2mf65rkf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartMusicSelection"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
