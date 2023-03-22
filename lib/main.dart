@@ -8,12 +8,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
 
   runApp(
     MaterialApp(
-      theme: ThemeData(primaryColor: Colors.black, brightness: Brightness.dark),
-      home: const LoginPage(),
+      theme: ThemeData(
+        primaryColor: Colors.black,
+        brightness: Brightness.dark,
+        hintColor: Colors.grey,
+      ),
+      home: LoginPage(),
       debugShowCheckedModeBanner: false,
     ),
   );

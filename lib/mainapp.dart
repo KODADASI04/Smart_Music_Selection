@@ -48,7 +48,7 @@ class _MainAppState extends State<MainApp> {
               await FirebaseAuth.instance.signOut();
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
+                MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
             icon: const Icon(Icons.logout),
