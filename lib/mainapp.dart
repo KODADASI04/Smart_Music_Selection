@@ -121,7 +121,7 @@ class _MainAppState extends State<MainApp> {
 
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Sayfa()),
+            MaterialPageRoute(builder: (context) => Sayfa()),
           );
         }
       },
