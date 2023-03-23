@@ -12,7 +12,7 @@ void main() async {
   runApp(
     MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.white,
         brightness: Brightness.dark,
         hintColor: Colors.grey,
       ),

@@ -11,24 +11,30 @@ class Sayfa extends StatelessWidget {
       appBar: AppBar(
           title: const Text(
         "Same music with you",
-      )
-      ),
-      body: const Card(
-        color: Colors.amber.shade100,
-        child: ListTile(leading: CircleAvatar(child: Icon(Icons.safety_check),),
-        title: Text ("A kişisi"),
-        subtitle: Text("dinlediği müziğin ismi"),
-        trailing: Row(children: [
-          Container()
-          OutlinedButton(onPressed: onPressed, child: Icon(Icons.message))
-
-        ]),
-        
-        
-        
+      )),
+      body: Column(children: [
+        Card(
+          color: Colors.blue.shade100,
+          child: ListTile(
+            leading: const CircleAvatar(
+              child: Icon(Icons.safety_check),
+            ),
+            title: const Text("A kişisi"),
+            subtitle: const Text("dinlediği müziğin ismi"),
+            trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+              OutlinedButton(onPressed: () {}, child: Icon(Icons.message)),
+              OutlinedButton(
+                  onPressed: () {}, child: Icon(Icons.heart_broken_outlined))
+            ]),
+          ),
         ),
-        
-      ),
+        const Divider(
+          color: Colors.black,
+          thickness: 1,
+          indent: 50,
+          endIndent: 50,
+        )
+      ]),
     );
   }
 }
