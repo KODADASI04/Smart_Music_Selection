@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:like_button/like_button.dart';
 
 class Sayfa extends StatelessWidget {
@@ -9,21 +7,83 @@ class Sayfa extends StatelessWidget {
   int likeCount = 12;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: const Text(
-        "Same music with you",
-      )),
-      body: Column(children: [
-        Card(
-          color: Colors.blue.shade100,
-          child: ListTile(
-            leading: const CircleAvatar(
-              child: Icon(Icons.safety_check),
-            ),
-            title: const Text("A kişisi"),
-            subtitle: const Text("dinlediği müziğin ismi"),
-            trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+    return SingleChildScrollView(
+      child: Column(children: [
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar1.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar2.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar3.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar4.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar5.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar6.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar7.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar8.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar9.png",
+        ),
+        peopleCard(
+          "A kişisi",
+          "Dinlediği Müziğin İsmi",
+          "assets/images/example_avatar10.png",
+        ),
+      ]),
+    );
+  }
+
+  Widget peopleCard(String name, String music, String assetName) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      child: Card(
+        color: Colors.blueGrey.shade200,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
+        elevation: 12,
+        child: ListTile(
+          leading: CircleAvatar(
+            child: Image.asset(assetName),
+          ),
+          title: Text(name),
+          subtitle: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(music),
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
               Ink(
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
@@ -31,70 +91,39 @@ class Sayfa extends StatelessWidget {
                     borderRadius: BorderRadius.circular(7)),
                 width: 45,
                 height: 28,
-                child: Icon(Icons.play_arrow),
+                child: const Icon(Icons.play_arrow),
               ),
-              OutlinedButton(
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.message,
-                    color: Colors.black,
-                  )),
-            ]),
-          ),
-        ),
-        const Divider(
-          color: Colors.black,
-          height: 2,
-          thickness: 1,
-          indent: 50,
-          endIndent: 50,
-        ),
-        Card(
-          color: Colors.blue.shade100,
-          child: ListTile(
-            leading: const CircleAvatar(
-              child: Icon(Icons.safety_check),
-            ),
-            title: const Text("A kişisi"),
-            subtitle: const Text("dinlediği müziğin ismi"),
-            trailing: Row(mainAxisSize: MainAxisSize.min, children: [
-              OutlinedButton(
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.message,
-                    color: Colors.black,
-                  )),
+              const SizedBox(
+                width: 10,
+              ),
               LikeButton(
-                  size: 27,
-                  isLiked: isLiked,
-                  likeCount: likeCount,
-                  likeBuilder: (isLiked) {
-                    final color = isLiked ? Colors.red : Colors.grey;
-                    return Icon(Icons.favorite, color: color, size: 27);
-                  },
-                  countBuilder: (count, isLiked, text) {
-                    final color = isLiked ? Colors.red : Colors.grey;
-                    return Text(likeCount.toString(),
-                        style: TextStyle(
-                            color: color,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold));
-                  },
-                  onTap: (isLiked) async {
-                    this.isLiked = !isLiked;
-                    likeCount += this.isLiked ? 1 : -1;
-                    return !isLiked;
-                  })
-            ]),
+                size: 27,
+                isLiked: isLiked,
+                likeCount: likeCount,
+                likeBuilder: (isLiked) {
+                  final color = isLiked ? Colors.red : Colors.grey;
+                  return Icon(Icons.favorite, color: color, size: 27);
+                },
+                countBuilder: (count, isLiked, text) {
+                  final color = isLiked ? Colors.red : Colors.grey;
+                  return Text(
+                    text,
+                    style: TextStyle(
+                        color: color,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  );
+                },
+                onTap: (isLiked) async {
+                  this.isLiked = !isLiked;
+                  likeCount += this.isLiked ? 1 : -1;
+                  return !isLiked;
+                },
+              ),
+            ],
           ),
         ),
-        const Divider(
-          color: Colors.black,
-          thickness: 1,
-          indent: 50,
-          endIndent: 50,
-        )
-      ]),
+      ),
     );
   }
 }

@@ -4,8 +4,6 @@ import 'dart:async';
 
 import 'package:smart_music_selection/home_page.dart';
 import 'package:smart_music_selection/login_page.dart';
-import 'package:smart_music_selection/same_music.dart';
-import 'package:smart_music_selection/veriler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -37,7 +35,7 @@ class _MainAppState extends State<MainApp> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: Column(
             children: [
               Align(
@@ -160,7 +158,7 @@ class _MainAppState extends State<MainApp> {
 
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => const HomePage()),
           );
         }
       },

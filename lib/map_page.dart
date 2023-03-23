@@ -38,34 +38,29 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Completer<GoogleMapController> _controller =
+    final Completer<GoogleMapController> controller =
         Completer<GoogleMapController>();
-
-    const CameraPosition _kGooglePlex = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962),
-      zoom: 14.4746,
-    );
-
-    const CameraPosition _kLake = CameraPosition(
-        bearing: 192.8334901395799,
-        target: LatLng(37.43296265331129, -122.08832357078792),
-        tilt: 59.440717697143555,
-        zoom: 19.151926040649414);
     return avatars.length != 10 || _location == null
         ? const Center(
             child: CircularProgressIndicator(),
           )
         : GoogleMap(
             mapType: MapType.normal,
-            initialCameraPosition: _kGooglePlex,
-            onMapCreated: (GoogleMapController controller) {
-              _controller.complete(controller);
+            initialCameraPosition: CameraPosition(
+              target: _location!,
+              zoom: 14.4746,
+            ),
+            onMapCreated: (GoogleMapController gcontroller) {
+              controller.complete(gcontroller);
             },
             markers: {
               for (int i = 0; i < 10; i++)
                 Marker(
                   markerId: MarkerId(i.toString()),
                   icon: avatars[i],
+                  infoWindow: const InfoWindow(
+                    title: "Aaa",
+                  ),
                   position: LatLng(
                     _location!.latitude + i / (Random().nextInt(1000) + 900),
                     _location!.longitude + i / (Random().nextInt(1000) + 900),
