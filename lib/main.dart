@@ -12,8 +12,8 @@ void main() async {
   runApp(
     MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.black,
-        brightness: Brightness.dark,
+        primaryColor: Colors.white,
+        brightness: Brightness.light,
         hintColor: Colors.grey,
       ),
       home: LoginPage(),
