@@ -1,8 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:smart_music_selection/datas_page.dart';
 import 'package:smart_music_selection/mainapp.dart';
 import 'package:smart_music_selection/map_page.dart';
@@ -22,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> pages = [
     const MapPage(),
     const SuggestedMusicPage(),
-    PeopleLikeYouPage(),
+    const PeopleLikeYouPage(),
     const DatasPage()
   ];
 

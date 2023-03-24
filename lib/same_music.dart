@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'people_music_card.dart';
 
 class PeopleLikeYouPage extends StatelessWidget {
-  PeopleLikeYouPage({super.key});
+  const PeopleLikeYouPage({super.key});
 
   @override
   Widget build(BuildContext context) {

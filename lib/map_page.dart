@@ -97,7 +97,7 @@ class _MapPageState extends State<MapPage> {
               ),
               SafeArea(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
