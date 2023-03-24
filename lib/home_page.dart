@@ -3,10 +3,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:smart_music_selection/datas_page.dart';
 import 'package:smart_music_selection/mainapp.dart';
 import 'package:smart_music_selection/map_page.dart';
 import 'package:smart_music_selection/same_music.dart';
-
+import 'package:smart_music_selection/suggested_music_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,30 +19,40 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 1;
 
-  List<Widget> pages = [const MapPage(), Container(), Sayfa(), Container()];
+  List<Widget> pages = [
+    const MapPage(),
+    const SuggestedMusicPage(),
+    PeopleLikeYouPage(),
+    const DatasPage()
+  ];
+
+  List<String> titles = [
+    "Map",
+    "Suggested Music for You",
+    "People Like You",
+    "Your Datas"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () async {
-            if (await GoogleSignIn().isSignedIn()) {
-              await GoogleSignIn().disconnect();
-            }
-            await FirebaseAuth.instance.signOut();
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const MainApp()),
-            );
-          },
-          icon: const Icon(Icons.arrow_back),
-        ),
-        title: const Text("AE Music"),
-        backgroundColor: Colors.red,
-        centerTitle: true,
-      ),
+      appBar: currentIndex == 0
+          ? null
+          : AppBar(
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MainApp()),
+                  );
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
+              title: Text(titles[currentIndex]),
+              backgroundColor: Colors.red,
+              centerTitle: true,
+            ),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.white,
@@ -64,7 +75,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
-            label: "People",
+            label: "People Like You",
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
+import 'mainapp.dart';
+
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
 
@@ -14,6 +16,7 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   List<BitmapDescriptor> avatars = [];
+  List<String> moods = ["Happy", "Sad"];
   LatLng? _location;
   @override
   void initState() {
@@ -44,29 +47,72 @@ class _MapPageState extends State<MapPage> {
         ? const Center(
             child: CircularProgressIndicator(),
           )
-        : GoogleMap(
-            mapType: MapType.normal,
-            initialCameraPosition: CameraPosition(
-              target: _location!,
-              zoom: 14.4746,
-            ),
-            onMapCreated: (GoogleMapController gcontroller) {
-              controller.complete(gcontroller);
-            },
-            markers: {
-              for (int i = 0; i < 10; i++)
-                Marker(
-                  markerId: MarkerId(i.toString()),
-                  icon: avatars[i],
-                  infoWindow: const InfoWindow(
-                    title: "Aaa",
+        : Stack(
+            children: [
+              GoogleMap(
+                mapType: MapType.normal,
+                initialCameraPosition: CameraPosition(
+                  target: _location!,
+                  zoom: 14.4746,
+                ),
+                onMapCreated: (GoogleMapController gcontroller) {
+                  controller.complete(gcontroller);
+                },
+                markers: {
+                  for (int i = 0; i < 10; i++)
+                    Marker(
+                      markerId: MarkerId(i.toString()),
+                      icon: avatars[i],
+                      infoWindow: InfoWindow(
+                        title: "Person $i",
+                        snippet: "Mood: ${moods[Random().nextInt(1)]}",
+                      ),
+                      position: LatLng(
+                        _location!.latitude +
+                            i / (Random().nextInt(1000) + 900),
+                        _location!.longitude +
+                            i / (Random().nextInt(1000) + 900),
+                      ),
+                    )
+                },
+              ),
+              SafeArea(
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainApp(),
+                        ),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.red.shade200,
+                    ),
                   ),
-                  position: LatLng(
-                    _location!.latitude + i / (Random().nextInt(1000) + 900),
-                    _location!.longitude + i / (Random().nextInt(1000) + 900),
+                ),
+              ),
+              SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "People Close to You",
+                      style: TextStyle(
+                        color: Colors.red.shade200,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        fontFamily: "PermanentMaker",
+                      ),
+                    ),
                   ),
-                )
-            },
+                ),
+              ),
+            ],
           );
   }
 
