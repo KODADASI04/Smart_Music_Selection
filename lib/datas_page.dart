@@ -92,7 +92,7 @@ class DatasPage extends StatelessWidget {
                                     colors: [Colors.green, Colors.red],
                                   ),
                                   border:
-                                      Border.all(color: Colors.black, width: 5),
+                                      Border.all(color: Colors.black, width: 2),
                                   borderRadius: BorderRadius.circular(20)),
                             ),
                           ],
