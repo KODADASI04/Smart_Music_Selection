@@ -26,7 +26,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 65,
+              height: 45,
             ),
             Center(
               child: CircleAvatar(
