@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:smart_music_selection/home_page.dart';
-import 'package:smart_music_selection/people_music_card.dart';
 
 class ProfilePage extends StatelessWidget {
-  ProfilePage({super.key});
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your Profile"),
+        backgroundColor: Colors.red,
+        title: const Text("Your Profile"),
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
@@ -25,7 +23,7 @@ class ProfilePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 45,
             ),
             Center(
@@ -36,14 +34,14 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 35),
+            const SizedBox(height: 35),
             Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 78,
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Text(
                       "95",
                       style:
@@ -56,11 +54,11 @@ class ProfilePage extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 120,
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Text(
                       "270",
                       style:
@@ -75,7 +73,7 @@ class ProfilePage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             MusicCard(
