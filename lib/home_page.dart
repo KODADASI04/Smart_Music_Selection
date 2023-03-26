@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> pages = [
     const MapPage(),
-    const SuggestedMusicPage(),
+    SuggestedMusicPage(),
     const PeopleLikeYouPage(),
     const DatasPage()
   ];
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()));
+                        MaterialPageRoute(builder: (context) => const ProfilePage()));
                   },
                   child: CircleAvatar(
                     child: Image.asset(
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 13,
                 )
               ],

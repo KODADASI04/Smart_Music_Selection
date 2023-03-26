@@ -1,75 +1,162 @@
+// ignore_for_file: must_be_immutable
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:smart_music_selection/people_music_card.dart';
+import 'package:like_button/like_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SuggestedMusicPage extends StatelessWidget {
-  const SuggestedMusicPage({super.key});
-
+  SuggestedMusicPage({super.key});
+  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
+    isLiked = false;
     return SingleChildScrollView(
       child: Column(
         children: [
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "The Weekend",
             subtitle: "Blinding Lights",
-            assetName: "assets/images/example_avatar1.png",
             url: "https://m.youtube.com/watch?v=4NRXx6U8ABQ",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Shape of You",
             subtitle: "Ed Sheeran",
-            assetName: "assets/images/example_avatar2.png",
             url: "https://m.youtube.com/watch?v=JGwWNGJdvx8",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Dance Monkey",
             subtitle: "Tones and I",
-            assetName: "assets/images/example_avatar3.png",
             url: "https://m.youtube.com/watch?v=q0hyYWKXF0Q",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Someone You Loved",
             subtitle: "Lewis Capaldi",
-            assetName: "assets/images/example_avatar4.png",
             url: "https://m.youtube.com/watch?v=zABLecsR5UE",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Rockstar",
             subtitle: "Post Malone ft. 21 Savage",
-            assetName: "assets/images/example_avatar5.png",
             url: "https://m.youtube.com/watch?v=UceaB4D0jpo",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Sunflower",
             subtitle: "Post Malone and Swae Lee",
-            assetName: "assets/images/example_avatar6.png",
             url: "https://m.youtube.com/watch?v=ApXoWvfEYVU",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "One Dance",
             subtitle: "Drake ft. Wizkid and Kyla",
-            assetName: "assets/images/example_avatar7.png",
             url: "https://m.youtube.com/watch?v=vcer12OFU2g",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Closer",
             subtitle: "The Chainsmokers ft. Halsey",
-            assetName: "assets/images/example_avatar8.png",
             url: "https://m.youtube.com/watch?v=0zGcUoRlhmw",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Stay",
             subtitle: "The Kid Laroi ve Justin Bieber",
-            assetName: "assets/images/example_avatar9.png",
             url: "https://m.youtube.com/watch?v=kTJczUoc26U",
           ),
-          PeopleMusicCard(
+          _musicExpansionTile(
             title: "Believer",
             subtitle: "Imagine Dragons",
-            assetName: "assets/images/example_avatar10.png",
             url: "https://m.youtube.com/watch?v=7wtfhZwyrcc",
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _musicExpansionTile(
+      {required String title, required String subtitle, required String url}) {
+    int likeCount = Random().nextInt(1000);
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: Card(
+        elevation: 12,
+        color: Colors.blueGrey.shade200,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: ExpansionTile(
+          title: Text(
+            title,
+            style: const TextStyle(color: Colors.black),
+          ),
+          subtitle: Text(
+            subtitle,
+            style: TextStyle(
+              color: Colors.grey.shade600,
+              fontSize: 12,
+            ),
+          ),
+          children: [
+            const Text(
+              "Suggested Mood: Happy",
+              style: TextStyle(
+                fontFamily: "PermanentMaker",
+                fontSize: 18,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 20, bottom: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  LikeButton(
+                    size: 27,
+                    isLiked: isLiked,
+                    likeCount: likeCount,
+                    likeBuilder: (isLiked) {
+                      final color = isLiked ? Colors.red : Colors.grey;
+                      return Icon(Icons.favorite, color: color, size: 27);
+                    },
+                    countBuilder: (count, isLiked, text) {
+                      final color = isLiked ? Colors.red : Colors.grey;
+                      return Text(
+                        text,
+                        style: TextStyle(
+                            color: color,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      );
+                    },
+                    onTap: (isLiked) async {
+                      this.isLiked = !isLiked;
+                      likeCount += this.isLiked ? 1 : -1;
+                      return !isLiked;
+                    },
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      await launchUrl(Uri.parse(url));
+                    },
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      width: 45,
+                      height: 28,
+                      child: const Icon(Icons.play_arrow),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
