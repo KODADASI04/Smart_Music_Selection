@@ -1,10 +1,7 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'music_expansion_tile.dart';
 
 class SuggestedMusicPage extends StatelessWidget {
   SuggestedMusicPage({super.key});
@@ -14,149 +11,76 @@ class SuggestedMusicPage extends StatelessWidget {
     isLiked = false;
     return SingleChildScrollView(
       child: Column(
-        children: [
-          _musicExpansionTile(
-            title: "The Weekend",
-            subtitle: "Blinding Lights",
-            url: "https://m.youtube.com/watch?v=4NRXx6U8ABQ",
+        children: const [
+          MusicExpansionTile(
+            title: "Blinding Lights",
+            subtitle: "The Weeknd",
+            youtubeUrl: "https://m.youtube.com/watch?v=4NRXx6U8ABQ",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/en/e/e6/The_Weeknd_-_Blinding_Lights.png",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Shape of You",
             subtitle: "Ed Sheeran",
-            url: "https://m.youtube.com/watch?v=JGwWNGJdvx8",
+            youtubeUrl: "https://m.youtube.com/watch?v=JGwWNGJdvx8",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/tr/4/4f/Shape_of_You_single_cover.jpg",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Dance Monkey",
             subtitle: "Tones and I",
-            url: "https://m.youtube.com/watch?v=q0hyYWKXF0Q",
+            youtubeUrl: "https://m.youtube.com/watch?v=q0hyYWKXF0Q",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/en/1/1f/Dance_Monkey_by_Tones_and_I.jpg",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Someone You Loved",
             subtitle: "Lewis Capaldi",
-            url: "https://m.youtube.com/watch?v=zABLecsR5UE",
+            youtubeUrl: "https://m.youtube.com/watch?v=zABLecsR5UE",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/en/a/a6/Lewis_Capaldi_-_Someone_You_Loved.png",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Rockstar",
             subtitle: "Post Malone ft. 21 Savage",
-            url: "https://m.youtube.com/watch?v=UceaB4D0jpo",
+            youtubeUrl: "https://m.youtube.com/watch?v=UceaB4D0jpo",
+            imageUrl: "",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Sunflower",
             subtitle: "Post Malone and Swae Lee",
-            url: "https://m.youtube.com/watch?v=ApXoWvfEYVU",
+            youtubeUrl: "https://m.youtube.com/watch?v=ApXoWvfEYVU",
+            imageUrl: "",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "One Dance",
             subtitle: "Drake ft. Wizkid and Kyla",
-            url: "https://m.youtube.com/watch?v=vcer12OFU2g",
+            youtubeUrl: "https://m.youtube.com/watch?v=vcer12OFU2g",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/commons/5/59/DrakeOneDance.png",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Closer",
             subtitle: "The Chainsmokers ft. Halsey",
-            url: "https://m.youtube.com/watch?v=0zGcUoRlhmw",
+            youtubeUrl: "https://m.youtube.com/watch?v=0zGcUoRlhmw",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/tr/c/c2/Closer_-_TheChainsmokers.png",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Stay",
             subtitle: "The Kid Laroi ve Justin Bieber",
-            url: "https://m.youtube.com/watch?v=kTJczUoc26U",
+            youtubeUrl: "https://m.youtube.com/watch?v=kTJczUoc26U",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/en/0/0c/The_Kid_Laroi_and_Justin_Bieber_-_Stay.png",
           ),
-          _musicExpansionTile(
+          MusicExpansionTile(
             title: "Believer",
             subtitle: "Imagine Dragons",
-            url: "https://m.youtube.com/watch?v=7wtfhZwyrcc",
+            youtubeUrl: "https://m.youtube.com/watch?v=7wtfhZwyrcc",
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/en/5/5c/Imagine-Dragons-Believer-art.jpg",
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _musicExpansionTile(
-      {required String title, required String subtitle, required String url}) {
-    int likeCount = Random().nextInt(1000);
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: Card(
-        elevation: 12,
-        color: Colors.blueGrey.shade200,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: ExpansionTile(
-          title: Text(
-            title,
-            style: const TextStyle(color: Colors.black),
-          ),
-          subtitle: Text(
-            subtitle,
-            style: TextStyle(
-              color: Colors.grey.shade600,
-              fontSize: 12,
-            ),
-          ),
-          children: [
-            const Text(
-              "Suggested Mood: Happy",
-              style: TextStyle(
-                fontFamily: "PermanentMaker",
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 20, bottom: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  LikeButton(
-                    size: 27,
-                    isLiked: isLiked,
-                    likeCount: likeCount,
-                    likeBuilder: (isLiked) {
-                      final color = isLiked ? Colors.red : Colors.grey;
-                      return Icon(Icons.favorite, color: color, size: 27);
-                    },
-                    countBuilder: (count, isLiked, text) {
-                      final color = isLiked ? Colors.red : Colors.grey;
-                      return Text(
-                        text,
-                        style: TextStyle(
-                            color: color,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      );
-                    },
-                    onTap: (isLiked) async {
-                      this.isLiked = !isLiked;
-                      likeCount += this.isLiked ? 1 : -1;
-                      return !isLiked;
-                    },
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                      await launchUrl(Uri.parse(url));
-                    },
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      width: 45,
-                      height: 28,
-                      child: const Icon(Icons.play_arrow),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_music_selection/home_page.dart';
 
+import 'music_expansion_tile.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -78,156 +80,69 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            MusicCard(
+            const MusicExpansionTile(
                 title: "Take Me Out",
                 subtitle: "Franz Ferdinand",
-                assetName: "assets/images/example_avatar1.png",
-                url:
+                youtubeUrl: "https://m.youtube.com/watch?v=Ijk4j-r7qPA",
+                imageUrl:
                     "https://upload.wikimedia.org/wikipedia/en/8/8f/Franz-Ferdinand.PNG"),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Bring Me To Life",
               subtitle: "Evanescence",
-              assetName:
-                  "https://upload.wikimedia.org/wikipedia/tr/9/98/Bring_Me_To_Life.jpg",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=3YxaaGgTQYM",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/9/98/Bring_Me_To_Life.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "I Hate Everything About You",
               subtitle: "Three Days Grace",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=d8ekz_CSBVg",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/en/f/ff/Three_days_grace_i_hate_everything_about_you.png",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Numb",
               subtitle: "Linkin Park",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=kXYiU_JCYtU",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/b/b9/Linkin_Park_-_Numb_CD_cover.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "It's My Life",
               subtitle: "Bon Jovi",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=vx2u5uUu3DE",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/c/c1/BonJoviItsMyLifeCDSingleCover.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Kuzu Kuzu",
               subtitle: "Tarkan",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=NAHRpEqgcL4",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/0/0a/Tarkan_Kuzu_Kuzu_2001_single.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Survivor",
               subtitle: "Destiny's Child",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=Wmc8bQoL-J0",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/en/9/99/Destiny%27s_Child_%E2%80%93_Survivor.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Shape Of You",
               subtitle: "Ed Sheeran",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=JGwWNGJdvx8",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/4/4f/Shape_of_You_single_cover.jpg",
             ),
-            MusicCard(
+            const MusicExpansionTile(
               title: "Whenever,Whereever",
               subtitle: "Shakira",
-              assetName: "assets/images/example_avatar1.png",
-              url:
+              youtubeUrl: "https://m.youtube.com/watch?v=weRHyjj34ZE",
+              imageUrl:
                   "https://upload.wikimedia.org/wikipedia/tr/f/fb/WheneverWherever.jpg",
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class MusicCard extends StatelessWidget {
-  final String assetName;
-  final String title;
-  final String subtitle;
-  final String url;
-  MusicCard(
-      {required this.title,
-      required this.subtitle,
-      required this.assetName,
-      required this.url,
-      super.key});
-
-  bool isLiked = false;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-      child: Card(
-        color: Colors.blueGrey.shade200,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14),
-        ),
-        elevation: 12,
-        child: ColorFiltered(
-          colorFilter: ColorFilter.matrix([
-            0.5,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0.5,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0.5,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-          ]),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              image: DecorationImage(
-                image: NetworkImage(url),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: ListTile(
-              leading: Text(
-                "1-",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25),
-              ),
-              title: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              subtitle: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  subtitle,
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          ),
         ),
       ),
     );
