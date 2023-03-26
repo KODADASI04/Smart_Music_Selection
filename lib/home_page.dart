@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> pages = [
     const MapPage(),
-    const SuggestedMusicPage(),
+    SuggestedMusicPage(),
     const PeopleLikeYouPage(),
     const DatasPage()
   ];
