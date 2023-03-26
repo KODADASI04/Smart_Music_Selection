@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_music_selection/datas_page.dart';
 import 'package:smart_music_selection/mainapp.dart';
 import 'package:smart_music_selection/map_page.dart';
+import 'package:smart_music_selection/profile_page.dart';
 import 'package:smart_music_selection/same_music.dart';
 import 'package:smart_music_selection/suggested_music_page.dart';
 
@@ -48,6 +49,22 @@ class _HomePageState extends State<HomePage> {
                 icon: const Icon(Icons.arrow_back),
               ),
               title: Text(titles[currentIndex]),
+              actions: [
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ProfilePage()));
+                  },
+                  child: CircleAvatar(
+                    child: Image.asset(
+                      "assets/images/example_avatar10.png",
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 13,
+                )
+              ],
               backgroundColor: Colors.red,
               centerTitle: true,
             ),
