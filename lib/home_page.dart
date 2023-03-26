@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()));
+                        MaterialPageRoute(builder: (context) => const ProfilePage()));
                   },
                   child: CircleAvatar(
                     child: Image.asset(
