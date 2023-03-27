@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'music_expansion_tile.dart';
+import '../../widgets/music_expansion_tile.dart';
 
 class SuggestedMusicPage extends StatelessWidget {
   SuggestedMusicPage({super.key});

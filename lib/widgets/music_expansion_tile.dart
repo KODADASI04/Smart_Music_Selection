@@ -24,7 +24,6 @@ class MusicExpansionTile extends StatefulWidget {
 
 class _MusicExpansionTileState extends State<MusicExpansionTile> {
   bool isLiked = false;
-  bool isImageLoaded = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +40,11 @@ class _MusicExpansionTileState extends State<MusicExpansionTile> {
               widget.imageUrl,
             ),
             opacity: 0.75,
-            onError: (exception, stackTrace) {
-              setState(() {
-                isImageLoaded = false;
-              });
-            },
           ),
         ),
         child: Card(
           elevation: 12,
-          color: isImageLoaded ? Colors.transparent : Colors.blueGrey.shade200,
+          color: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
