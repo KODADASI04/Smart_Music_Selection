@@ -1,12 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:smart_music_selection/datas_page.dart';
-import 'package:smart_music_selection/mainapp.dart';
-import 'package:smart_music_selection/map_page.dart';
-import 'package:smart_music_selection/profile_page.dart';
-import 'package:smart_music_selection/same_music.dart';
-import 'package:smart_music_selection/suggested_music_page.dart';
+import 'package:smart_music_selection/pages/home_pages/datas_page.dart';
+import 'package:smart_music_selection/pages/mainapp.dart';
+import 'package:smart_music_selection/pages/home_pages/map_page.dart';
+import 'package:smart_music_selection/pages/home_pages/profile_page.dart';
+import 'package:smart_music_selection/pages/home_pages/similiar_people_page.dart';
+import 'package:smart_music_selection/widgets/suggested_music_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

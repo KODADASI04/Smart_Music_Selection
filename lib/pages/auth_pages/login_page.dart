@@ -4,10 +4,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:smart_music_selection/signup_page.dart';
-import 'package:smart_music_selection/social_login_button.dart';
+import 'package:smart_music_selection/pages/auth_pages/signup_page.dart';
+import 'package:smart_music_selection/widgets/social_login_button.dart';
 
-import 'mainapp.dart';
+import '../mainapp.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});

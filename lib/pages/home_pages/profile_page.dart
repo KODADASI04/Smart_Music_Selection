@@ -3,9 +3,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:smart_music_selection/home_page.dart';
+import 'package:smart_music_selection/pages/home_pages/home_page.dart';
 
-import 'music_expansion_tile.dart';
+import '../../widgets/music_expansion_tile.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

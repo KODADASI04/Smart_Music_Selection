@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'people_music_card.dart';
+import '../../widgets/people_music_card.dart';
 
 class PeopleLikeYouPage extends StatelessWidget {
   const PeopleLikeYouPage({super.key});

@@ -3,9 +3,9 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_music_selection/social_login_button.dart';
+import 'package:smart_music_selection/widgets/social_login_button.dart';
 
-import 'mainapp.dart';
+import '../mainapp.dart';
 
 class SignupPage extends StatelessWidget {
   SignupPage({super.key});

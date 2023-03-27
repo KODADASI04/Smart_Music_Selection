@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:smart_music_selection/login_page.dart';
+import 'package:smart_music_selection/pages/auth_pages/login_page.dart';
 
 
 void main() {
