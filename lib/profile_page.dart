@@ -51,8 +51,8 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     Text(
                       (Random().nextInt(1000)).toString(),
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 35),
                     ),
                     const Text(
                       "Likes",
