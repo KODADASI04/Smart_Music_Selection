@@ -88,22 +88,22 @@ class _MapPageState extends State<MapPage> {
                         ),
                       );
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back,
-                      color: Colors.red.shade200,
+                      color: Colors.red,
                     ),
                   ),
                 ),
               ),
-              SafeArea(
+              const SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 10),
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Text(
                       "People Close to You",
                       style: TextStyle(
-                        color: Colors.red.shade200,
+                        color: Colors.red,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                         fontFamily: "PermanentMaker",

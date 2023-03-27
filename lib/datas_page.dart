@@ -177,7 +177,7 @@ class DatasPage extends StatelessWidget {
                                 style: TextStyle(fontSize: 18),
                               ),
                               const SizedBox(
-                                width: 15,
+                                width: 40,
                               ),
                               BoxedIcon(
                                 WeatherIcons.fromString(

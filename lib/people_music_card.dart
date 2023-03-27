@@ -59,9 +59,10 @@ class PeopleMusicCard extends StatelessWidget {
                   return Text(
                     text,
                     style: TextStyle(
-                        color: color,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      color: color,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   );
                 },
                 onTap: (isLiked) async {
@@ -77,16 +78,7 @@ class PeopleMusicCard extends StatelessWidget {
                 onTap: () async {
                   await launchUrl(Uri.parse(url));
                 },
-                child: Ink(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  width: 45,
-                  height: 28,
-                  child: const Icon(Icons.play_arrow),
-                ),
+                child: Image.asset("assets/images/yt_music.png"),
               ),
             ],
           ),

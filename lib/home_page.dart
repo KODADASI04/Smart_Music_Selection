@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   List<String> titles = [
     "Map",
     "Suggested Music for You",
-    "People Like You",
+    "Similar Music Listeners",
     "Your Datas"
   ];
 
@@ -52,8 +52,10 @@ class _HomePageState extends State<HomePage> {
               actions: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const ProfilePage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()));
                   },
                   child: CircleAvatar(
                     child: Image.asset(

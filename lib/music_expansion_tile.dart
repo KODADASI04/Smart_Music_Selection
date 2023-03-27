@@ -7,13 +7,13 @@ import 'package:url_launcher/url_launcher.dart';
 class MusicExpansionTile extends StatefulWidget {
   final String title;
   final String subtitle;
-  final String youtubeUrl;
+  final String musicUrl;
   final String imageUrl;
 
   const MusicExpansionTile({
     required this.title,
     required this.subtitle,
-    required this.youtubeUrl,
+    required this.musicUrl,
     required this.imageUrl,
     super.key,
   });
@@ -34,12 +34,13 @@ class _MusicExpansionTileState extends State<MusicExpansionTile> {
       padding: const EdgeInsets.all(5),
       child: Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
             fit: BoxFit.fill,
             image: NetworkImage(
               widget.imageUrl,
             ),
-            opacity: 0.5,
+            opacity: 0.75,
             onError: (exception, stackTrace) {
               setState(() {
                 isImageLoaded = false;
@@ -50,6 +51,9 @@ class _MusicExpansionTileState extends State<MusicExpansionTile> {
         child: Card(
           elevation: 12,
           color: isImageLoaded ? Colors.transparent : Colors.blueGrey.shade200,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
           child: ExpansionTile(
             collapsedIconColor: Colors.white,
             title: Text(
@@ -64,22 +68,41 @@ class _MusicExpansionTileState extends State<MusicExpansionTile> {
               ),
             ),
             children: [
-              const Text(
-                "Suggested Mood: Happy",
-                style: TextStyle(
-                  fontFamily: "PermanentMaker",
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
               Padding(
                 padding: const EdgeInsets.only(right: 20, bottom: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    GestureDetector(
+                      onTap: () async {
+                        await launchUrl(Uri.parse(widget.musicUrl));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(24),
+                          color: Colors.white30,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/yt_music.png"),
+                              const Text(
+                                "Play On Youtube Music",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     LikeButton(
                       size: 27,
                       isLiked: isLiked,
@@ -103,24 +126,6 @@ class _MusicExpansionTileState extends State<MusicExpansionTile> {
                         likeCount += this.isLiked ? 1 : -1;
                         return !isLiked;
                       },
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    GestureDetector(
-                      onTap: () async {
-                        await launchUrl(Uri.parse(widget.youtubeUrl));
-                      },
-                      child: Ink(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        width: 45,
-                        height: 28,
-                        child: const Icon(Icons.play_arrow),
-                      ),
                     ),
                   ],
                 ),
