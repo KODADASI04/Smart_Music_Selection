@@ -44,7 +44,7 @@ class SuggestedMusicPage extends StatelessWidget {
             title: "Rockstar",
             subtitle: "Post Malone ft. 21 Savage",
             musicUrl: "https://music.youtube.com/watch?v=AaxFIY-cWH0",
-            imageUrl: "",
+            imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/1c/PostMaloneRockstar.jpg",
           ),
           MusicExpansionTile(
             title: "Sunflower",

@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
-            label: "People Like You",
+            label: "Similar Music Listeners",
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
