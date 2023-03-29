@@ -26,10 +26,11 @@ https://user-images.githubusercontent.com/46077038/228577453-a12807f3-a6fd-457d-
 
 From these pages, you can allow location access on our first page and see the people closest to your location and their mood by clicking on their avatars. The second page is a demonstration of the page where our application will recommend music for you. You can click on the songs and see the "Play on Youtube Music" button and like button. Our third page takes you to an example page where you can see and like what people with similar moods to yours are listening to and play them on Youtube Music. On our fourth page, an example page shows how data will be displayed in real-time. When you click on the avatar on the app bar on the top, your profile page opens. This page is filled with randomly selected example values to show how the display works. You can go back to the first page with the back arrow on the left side of the app bar. If you click on the top right button, you can log out of your account in the application.
 
-![Screenshot_1680100999](https://user-images.githubusercontent.com/46077038/228577536-b620b238-6721-44e2-aa6c-4338f57e5a77.png)
-![Screenshot_1680101009](https://user-images.githubus![Screenshot_1680101015](https://user-images.githubusercontent.com/46077038/228577590-8b212fa5-972d-4e08-aa1d-b829a22253d2.png)
-![Screenshot_1680101015](https://user-images.githubusercontent.com/46077038/228577831-b8e26938-05f5-4de6-80a4-d0b2b3b56b13.png)
+![Screenshot_1680100999_295x640](https://user-images.githubusercontent.com/46077038/228584072-2a334c6d-b10c-4c3d-8310-4a6d7e58f6d4.jpg)
+![Screenshot_1680101009_295x640](https://user-images.githubusercontent.com/46077038/228584109-5c996189-b5e0-46ad-88c1-2dc9f0be4ae1.jpg)
+![Screenshot_1680101015_295x640](https://user-images.githubusercontent.com/46077038/228584119-ef8b524f-2ccb-4674-a73c-d92090756881.jpg)
+![Screenshot_1680101018_295x640](https://user-images.githubusercontent.com/46077038/228584130-f3154201-4e05-46b9-95cd-3624de7a0ba5.jpg)
+![Screenshot_1680101026_295x640](https://user-images.githubusercontent.com/46077038/228584161-345b35b4-991f-43fa-977f-095e74088bc7.jpg)
+![Screenshot_1680101020_295x640](https://user-images.githubusercontent.com/46077038/228584154-12fb2d80-bab5-436d-ba58-d4bd56011ee0.jpg)
 
-![Screenshot_1680101018](https://user-images.githubusercontent.com/46077038/228577709-e1d88e1f-23a5-41ad-88e6-74647e6ac06b.png)
-![Screenshot_1680101020](https://user-images.githubusercontent.com/46077038/228577734-e71ae945-fbae-4152-bf6f-96b44c74647f.png)
-![Screenshot_1680101026](https://user-images.githubusercontent.com/46077038/228577748-71b254a3-ba71-4060-95b5-7fd72a99d319.png)
+
