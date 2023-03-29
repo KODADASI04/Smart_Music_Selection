@@ -17,7 +17,7 @@ You can run our application by installing it from the apk in the build/app/outpu
 
 In our application, if you don't have an account, you need to create one first. In addition, you can use the option to sign in with Google to create an account even if you don't have one.
 
-![Screenshot_1680100824_147x320](https://user-images.githubusercontent.com/46077038/228582697-7cd6dcd2-eca4-4824-91db-ef11f54458fd.jpg)
+![Screenshot_1680100824_147x320](https://user-images.githubusercontent.com/46077038/228582697-7cd6dcd2-eca4-4824-91db-ef11f54458fd.jpg)          
 ![Screenshot_1680100830_147x320](https://user-images.githubusercontent.com/46077038/228582727-bdd43def-12db-4ca9-833d-0f6f51bb2e3e.jpg)
 
 After creating your account, you need to press and hold the button that appears in front of you until the button turns white. Once our button turns white, it will take you to the page where music recommendations are available. As our application cannot currently retrieve data through health applications, it will not keep you waiting for data processing. However, it will take you to pages that explain the purpose of the application and show you what you will encounter after the data processing is added. 
