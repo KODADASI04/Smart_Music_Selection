@@ -30,7 +30,6 @@ From these pages, you can allow location access on our first page and see the pe
 ![Screenshot_1680101009_295x640](https://user-images.githubusercontent.com/46077038/228584109-5c996189-b5e0-46ad-88c1-2dc9f0be4ae1.jpg)
 ![Screenshot_1680101015_295x640](https://user-images.githubusercontent.com/46077038/228584119-ef8b524f-2ccb-4674-a73c-d92090756881.jpg)
 ![Screenshot_1680101018_295x640](https://user-images.githubusercontent.com/46077038/228584130-f3154201-4e05-46b9-95cd-3624de7a0ba5.jpg)
-![Screenshot_1680101026_295x640](https://user-images.githubusercontent.com/46077038/228584161-345b35b4-991f-43fa-977f-095e74088bc7.jpg)
 ![Screenshot_1680101020_295x640](https://user-images.githubusercontent.com/46077038/228584154-12fb2d80-bab5-436d-ba58-d4bd56011ee0.jpg)
-
+![Screenshot_1680101026_295x640](https://user-images.githubusercontent.com/46077038/228584161-345b35b4-991f-43fa-977f-095e74088bc7.jpg)
 
